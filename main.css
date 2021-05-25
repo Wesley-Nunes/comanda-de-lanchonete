@@ -1,0 +1,210 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: Snow;
+
+  font: 1.7rem "OCR A Std", monospace;
+
+  margin: 3rem;
+}
+
+abbr {
+  position: absolute;
+}
+
+button {
+  border: none;
+
+  background-color: black;
+  color: white;
+
+  font: small-caps 1.8rem "OCR A Std", monospace;
+
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+
+button:hover {
+  color: OrangeRed;
+  box-shadow: 0 0 2px 1px OrangeRed;
+}
+
+#main-wrapper {
+  max-width: 75vw;
+  border: 0.1rem solid Moccasin;
+
+  padding: 2rem;
+}
+
+#title {
+  border-bottom: solid OrangeRed;
+
+  font: bold 5rem "URW Chancery L", cursive;
+  text-align: center;
+
+  margin: 1rem;
+}
+
+#add-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 2.4rem;
+
+  margin: 2rem;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 1.2rem;
+
+  padding: 0 1rem;
+}
+
+#price {
+  width: 50%;
+}
+
+#order-list {
+  border: 0.1rem solid Moccasin;
+
+  padding: 1rem;
+  margin: 3rem;
+}
+
+#order-list h2 {
+  margin: 1rem;
+}
+
+#added-items {
+  margin: 2rem 0;
+}
+
+#added-items li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem;
+}
+
+#added-items li:nth-child(odd) {
+  background-color: lightgray;
+}
+
+#added-items li p {
+  min-width: 30rem;
+}
+
+@media screen and (max-width: 780px) {
+  body {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  button {
+    width: auto;
+    height: 4rem;
+    font-size: 2rem;
+  }
+
+  #title {
+    font-size: 4rem;
+  }
+
+  #add-order {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 45% 40%;
+    grid-template-areas:
+      "item price"
+      "submit submit";
+  }
+
+  #add-order div:nth-child(1) {
+    grid-area: item;
+  }
+  #add-order div:nth-child(2) {
+    grid-area: price;
+  }
+  #add-order div:nth-child(3) {
+    grid-area: submit;
+  }
+
+  #added-items li p {
+    min-width: 0;
+  }
+
+  #added-items li button {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  #title {
+    font-size: 3rem;
+  }
+  #add-order {
+    grid-gap: 3rem 0;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "item"
+      "price"
+      "submit";
+  }
+  .group {
+    grid-row-gap: 0;
+  }
+  #added-items li {
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-template-areas:
+      "itemdesc itemdesc itemdesc "
+      "pricesymbol pricevalue closebtn";
+  }
+
+  #added-items li p:nth-child(1) {
+    grid-area: itemdesc;
+  }
+  #added-items li div:nth-child(2) {
+    grid-area: pricesymbol;
+  }
+  #added-items li div:nth-child(3) {
+    grid-area: pricevalue;
+  }
+  #added-items li button:nth-child(4) {
+    grid-area: closebtn;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  body {
+    max-width: 100vw;
+  }
+
+  #main-wrapper {
+    max-width: 100vw;
+    border: none;
+  }
+}

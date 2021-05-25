@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <title>Comanda | Casa da Esfirra</title>
+  </head>
+  <body>
+    <main id="main-wrapper">
+      <header id="title">
+        <h1>Casa da Esfirra</h1>
+      </header>
+
+      <form id="add-order">
+        <div class="group">
+          <label for="item">
+            Qual foi o pedido?<abbr title="Preenchimento obrigatorio">*</abbr>
+          </label>
+          <input type="text" name="item" id="item" required="" maxlength="25" />
+        </div>
+
+        <div class="group">
+          <label for="price">
+            Quanto custou?<abbr title="Preenchimento obrigatorio">*</abbr>
+          </label>
+          <span id="price-holder">
+            R$
+            <input
+              type="text"
+              name="price"
+              id="price"
+              placeholder="0.00"
+              pattern="\d*|\d*\.\d{0,2}$"
+              required=""
+            />
+            <abbr title="Para centavos, use . exemplo: 0.50">*</abbr>
+          </span>
+        </div>
+
+        <div class="group">
+          <button form="add-order" type="submit" id="submit">adicionar</button>
+        </div>
+      </form>
+
+      <section id="order-list">
+        <h2>Pedidos</h2>
+        <ul id="added-items">
+          <!-- To be filled by JavaScript Code -->
+        </ul>
+        <h4 id="total">Total: R$<span id="total-value">0.00</span></h4>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
